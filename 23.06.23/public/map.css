@@ -1,0 +1,120 @@
+#map {
+  background-color: rgb(209, 226, 231);
+}
+
+#map div {
+  border: 1px solid black;
+}
+
+#map .maptitle h2 {
+  font-size: 1.8rem;
+}
+
+#map .maptitle h1 {
+  font-size: 2.5rem;
+}
+
+#map .maptitle h2,
+#map .maptitle h1 {
+  font-weight: 900;
+  opacity: 0.85;
+  text-align: center;
+}
+
+#map .container {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#map .container .buttonboxes {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+#map .container .buttonboxes .button {
+  width: 36rem;
+  height: 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#map .container .buttonboxes .button button {
+  flex: 1;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 900;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: 3rem 3rem 1rem rgba(black, black, black, 0.5);
+  color: white;
+  background-color: lightsteelblue;
+}
+
+#map .container .buttonboxes:nth-child(2) .button button {
+  background-color: violet;
+}
+
+#map .container .buttonboxes .buttontext {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#map .container .buttonboxes .buttontext ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+#map .container .buttonboxes .textlist ul li {
+  flex: 1;
+  font-weight: 900;
+}
+
+#map .container .buttonboxes:first-child li {
+  color: lightsteelblue;
+}
+
+#map .container .buttonboxes:last-child li {
+  color: violet;
+}
+
+.maparea {
+  width: 900px;
+  height: 600px;
+}
+
+.maparea {
+  border: 1px solid black;
+  background-color: brown;
+  margin: auto;
+}
+
+.maparea .map {
+  width: 100%;
+  height: 100%;
+}
+
+.maparea .map div {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  background-color: brown;
+}
+
+.maparea .map:nth-child(2) img {
+  background-color: brown;
+}
+
+.maparea .map div img {
+  width: 100%;
+}

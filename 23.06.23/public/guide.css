@@ -1,0 +1,89 @@
+#guide {
+  background-color: blue;
+  display: none;
+}
+
+#guide .text-box {
+  color: white;
+  text-align: center;
+}
+
+#guide .text-box span {
+  font-size: 1.3rem;
+}
+
+#guide .text-box p {
+  font-weight: 900;
+  opacity: 0.5;
+}
+
+#guide .step {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#guide .step .box-wrapper {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#guide .step .box-wrapper .item-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+#guide .step .box-wrapper .item-box > div {
+  padding: 1rem 0.5rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 1rem;
+  font-weight: 900;
+}
+
+#guide .step .box-wrapper .item-box > div h1,
+#guide .step .box-wrapper .item-box > div h2 {
+  margin: 0;
+}
+
+#guide .step .box-wrapper .item-box > div h1 {
+  color: white;
+}
+
+#guide .step .box-wrapper .item-box > div h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: gold;
+}
+
+#guide .step .box-wrapper:first-child .item-box:first-child div:first-child {
+  background-color: cadetblue;
+}
+
+#guide .step .box-wrapper:first-child .item-box:nth-child(2) div:first-child {
+  background-color: orchid;
+}
+
+#guide .step .box-wrapper:nth-child(2) .item-box:first-child div:first-child {
+  background-color: blueviolet;
+}
+
+#guide .step .box-wrapper:nth-child(2) .item-box:last-child div:first-child {
+  background: linear-gradient(to bottom, orchid, blueviolet);
+}
+
+#guide .container .footer {
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-align: center;
+  color: lightblue;
+}
