@@ -21,7 +21,7 @@ const foo = function () {};
 // 작동 안 됨
 ```
 
-##함수를 사용하는 3가지 방법
+## 함수를 사용하는 3가지 방법
 
 - 일반 함수로 사용
 - 생성자 함수로 사용
@@ -32,7 +32,7 @@ const foo = function () {};
 ```js
 function foo(a, b) {
   console.log(this);
-  //window 객체
+  // window 객체
   return [a, b];
 }
 
@@ -67,7 +67,7 @@ console.log(a);
 
 ```js
 function foo(a, b) {
-  console.log(this); //this가 무엇인가 -> method f
+  console.log(this); // this가 무엇인가 -> method f
 }
 
 const bar = {
@@ -91,7 +91,7 @@ ES6
 
 ```js
 function foo(a, b) {
-  //this = {id:"web7722"}
+  // this = {id:"web7722"}
   console.log(this);
   // binding은 쓰지 않는 것이 효율적이다.
 }
@@ -99,7 +99,7 @@ function foo(a, b) {
 foo(1, 2);
 
 const bar = foo.bind({ id: "web7722" });
-//함수 자체를 return 한다.
+// 함수 자체를 return 한다.
 ```
 
 1. 함수 선언식을 쓰지 않는다. -> Arrow Function
@@ -116,7 +116,7 @@ const foo = (a, b) => {
 
 foo();
 const c = new foo();
-//foo is not a constructor.
+// foo is not a constructor.
 ```
 
 es6가 arrow function을 만든 이유
