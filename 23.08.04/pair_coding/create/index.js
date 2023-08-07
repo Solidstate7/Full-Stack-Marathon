@@ -26,11 +26,12 @@ const writers = document.getElementById("writer")
 
 document.getElementById("submit").onclick = () => {
     const row = new Board(1, titles.value, contents.value, writers.value)
-    if (localStorage.length == 0) localStorage.setItem("rows" , [])
-    else {
-    const retrieveList = localStorage.getItem("rows")
-    JSON.parse(retrieveList).push(row)
-    localStorage.setItem("rows", JSON.stringify(retrieveList))
-    }
+    if (titles.value.length)
+    // if (localStorage.length == 0) localStorage.setItem("rows" , [])
+    // else {
+    // const retrieveList = localStorage.getItem("rows")
+    // JSON.parse(retrieveList).push(row)
+    // localStorage.setItem("rows", JSON.stringify(retrieveList))
+    // }
     window.location.href = "../list/"
 }
