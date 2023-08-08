@@ -77,9 +77,9 @@ c();
 
 ## 이벤트 루프
 
-`비동기` 코드를 이해하기 위해 개념/그림
+`비동기` 코드를 이해하기 위한 개념/그림
 
-프로세스, 스레드
+프로세스, 스레드: 프로세스는 스레드를 갖는다
 
 익스플로러 vs 크롬
 
@@ -101,9 +101,8 @@ JS -> 조작 가능 call stack은 하나지만 실제로는 thread 2개
 1. 빨래하고 정리
 2. 편의점 가서 우유 사오기
 
-explorer -> single-thread
-chrome -> multi-thread -> 스레드 간에 데이터(변수) 공유 가능
-프로세스 하나마다 스레드 하나를 갖는다
+explorer -> multi-thread -> 스레드 간에 데이터(변수) 공유 가능
+chrome -> multi-process ->
 
 thread 2개
 
