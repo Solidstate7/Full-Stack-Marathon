@@ -18,9 +18,10 @@ form.addEventListener("submit", (e) => {
     } = e.target
     // destructuring
 
-    console.log(title, writer, content)
+    const id = storage.incrementId()
+
     const dataRow = {
-        id:1,
+        id: id,
         title: title,
         writer: writer,
         content: content,
@@ -28,5 +29,5 @@ form.addEventListener("submit", (e) => {
     const boardRow = new BoardRow(dataRow)
     storage.set(boardRow)
     
-    location.href="/board/view.html?id=1"
+    location.href=`/board/view.html?id=${id}`
 })

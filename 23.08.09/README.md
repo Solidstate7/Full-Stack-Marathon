@@ -27,3 +27,10 @@ TODO-list -> CRUD 한 화면에서
 
 - JS Module (ES6+)
 - defer 속성
+
+## CRUD
+
+View
+
+1. 쿼리스트링 작업 URL
+2. localStorage의 특정 요소 추출
