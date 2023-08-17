@@ -94,3 +94,12 @@ $ cd /
 PM(Package Manager)
 
 apt-get / apt
+
+nvm --version
+mysql --version
+
+```sh
+sudo apt update
+sudo apt upgrade
+sudo apt install mysql-server
+```
