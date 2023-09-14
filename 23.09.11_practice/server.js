@@ -1,0 +1,36 @@
+require("dotenv").config()
+const net = require("net")
+
+const Request = require("./lib/request")
+const Response = require("./lib/response")
+
+const {SERVER_PORT, NODE_ENV} = process.env
+const PORT = SERVER_PORT || 3000
+
+const server = net.createServer()
+
+server.on("connection", (socket) => {
+  console.log("TCP HANDSHAKE COMPLETED, CONNECTION ESTABLISHED.")
+
+  socket.on("data", (chunk) => {
+    const req = new Request(chunk)
+    const res = new Response(socket)
+
+    console.log(req.headres.uri)
+
+    if (req.headers.method === "GET" && req.headers.uri === "/boards/list") {
+      res.sendFile("list.html")
+    } else if (req.headers.method === "GET" && req.headers.uri === "/boards/write") {
+      res.sendFile("write.html")
+    } else if (req.headers.method === "POST" && req.headers.uri === "/boards/write") {
+      console.log(req.headers["Content-Type"]);
+      console.log(req.body)
+    }
+
+  })
+})
+
+server.listen(3000, () => {
+  console.log("SERVER LISTENING ON PORT 3000")
+})
+
