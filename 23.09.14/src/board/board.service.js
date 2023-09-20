@@ -17,3 +17,13 @@ exports.getFindAll = () => {
   const result = boardRepository.findAll()
   return result
 }
+
+exports.modify = (id, new_row) => {
+  const id = parseInt(id)
+  const result = boardRepository.findOne(id)
+  boardRepository.update(id, new_row)
+}
+
+exports.delete = (id) => {
+  boardRepository.delete(id)
+}
