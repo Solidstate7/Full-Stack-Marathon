@@ -8,7 +8,7 @@ router.get('/view', controller.getView)
 router.get('/modify', controller.getModify)
 
 router.post('/write', controller.postWrite)
-router.post('/write', controller.postModify)
-router.post('/write', controller.postDelete)
+router.post('/modify', controller.postModify)
+router.post('/delete', controller.postDelete)
 
 module.exports = router

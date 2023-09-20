@@ -17,7 +17,7 @@ exports.getView = (req, res) => {
 }
 
 exports.getModify = (req, res) => {
-  res.send('GET MODIFY')
+  res.render('board/modify.html')
 }
 
 exports.postWrite = (req, res) => {
@@ -27,10 +27,15 @@ exports.postWrite = (req, res) => {
 }
 
 exports.postModify = (req, res) => {
-  res.send('POST MODIFY')
+  const { id } = req.query
+  const new_row = req.body
+  boardService.modify(id, new_row)
+  res.redirect(`/boards/view?id=${id}`)
 }
 
-exports.postDelete = (res, req) => {
-  res.send('POST DELETE')
+exports.postDelete = (req, res) => {
+  const { id } = req.query
+  boardService.delete(id)
+  res.redirect('/boards/list')
 }
 

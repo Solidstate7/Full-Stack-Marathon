@@ -1,6 +1,6 @@
 const Board = require('./board.entity')
 
-const data = []
+let data = []
 // data = [{id:1, name:123}, {id:2, name:456}]
 const latestId = () => {
   return data.length + 1
@@ -15,7 +15,7 @@ exports.findOne = (id) => {
   return board
 }
 
-exports.incrementHit = (id) => {
+exports.incrementHit = (id) => { 
   const index = data.findIndex(v => v.id === id)
   data[index].hit += 1
 }
@@ -28,8 +28,18 @@ exports.create = (title, writer, content) => {
   return board
 }
 
-exports.update = () => {}
+exports.update = (id, new_row) => {
+  data = data.map(v => {
+    if (v.id == id) {
+      return new_row
+    }
+    return v
+  }
+  )
+}
 
-exports.delete = () => {}
+exports.delete = (id) => {
+  data = data.filter(v => v.id != id)
+}
 
 
