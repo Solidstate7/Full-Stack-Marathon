@@ -10,7 +10,7 @@ class Request {
     body = null
 
     constructor(buffer) {
-        const [headerString, bodyString] = this.getReqeustMessage(buffer)
+        const [headerString, bodyString] = this.getRequestMessage(buffer)
         this.setRawHeaders(headerString)
 
         const startline = this.parseStartLine()
@@ -77,7 +77,7 @@ class Request {
         this.#rawHeaders = headerArr
     }
 
-    getReqeustMessage(buffer) {
+    getRequestMessage(buffer) {
         const [header, ...rest] = buffer.toString().split(GUILLOTINE)
         const body = rest.join(GUILLOTINE)
 
