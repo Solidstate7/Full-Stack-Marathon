@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Page</title>
+</head>
+<body>
+  {% if user %}
+  {{user.userid}}님 환영합니다. <br /> 로그인 되었음 <a href="/users/logout">Logout</a>
+  {% else %}
+  <a href="/users/login">Login</a>
+  {% endif %}
+</body>
+</html>
