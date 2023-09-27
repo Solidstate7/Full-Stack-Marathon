@@ -13,7 +13,7 @@ exports.auth = async (req, res, next) => {
 
     const user = await userService.findOneByUserId(payload.id)
     req.user = user
-    next()
+    next()                                                                                                                                                                                        
   } catch (e) {
     next (e)
   }
