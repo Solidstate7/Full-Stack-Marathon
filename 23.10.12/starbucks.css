@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#menu_list {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    list-style-type: none;
+    padding: 20px;
+}
+
+#info_list {
+    display: flex;
+    flex-direction: row;
+}
