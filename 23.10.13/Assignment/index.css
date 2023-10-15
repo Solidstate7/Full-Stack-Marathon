@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    width: 1440px;
+    height: 100vh;
+    margin: auto;
+    background-color: lavender;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+}
+
+#container {
+    margin: auto;
+    width: 720px;
+    padding-top: 18vh;
+}
+
+#counter {
+    width: 15%;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+#shooter {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 100px;
+    border: 1px solid black;
+}
+
+input[placeholder="Say something special!"] {
+    width: 75%;
+    height: 50px;
+}
+
+form {
+    margin: 25px 25px;
+}
+
+button {
+    width: 20%;
+    height: 50px;
+    background-color: mintcream;
+}
+
+#target {
+    width: 100%;
+    border: 1px solid black;
+}
+#target > #comments {
+    display: flex;
+    flex-direction: column;
+}
+
+#target > #comments > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+li {
+    list-style-type: none;
+}
+
+li > div {
+    width: 25px;
+}
+li > div > img {
+    width: 100%;
+}
