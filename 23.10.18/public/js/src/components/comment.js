@@ -1,6 +1,6 @@
 import Component from "../../core/component.js";
-import CommentForm from "../contents/form.js";
-import CommentList from "../contents/item.js";
+import CommentForm from "../contents/comment/form.js";
+import CommentList from "../contents/comment/item.js";
 
 class Comment extends Component {
     setup() {
