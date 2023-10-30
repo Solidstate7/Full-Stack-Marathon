@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Main Page</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <a href="/signup">Sign Up</a>
+        <a href="/single">Upload Single File</a>
+        <a href="/signin">Sign In</a>
+        {% if id %}
+        <h2>{{name}}님 환영합니다.</h2>
+        {% endif %}
+    </body>
+</html>
