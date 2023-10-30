@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sign In</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <form action="" enctype="multipart/form-data">
+            <label for="id">ID: <input type="text" name="id" /></label>
+            <label for="pw"
+                >Password: <input type="password" name="pw"
+            /></label>
+            <button>Sign In</button>
+        </form>
+        <script>
+            const frm = document.querySelector("form");
+            frm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(e.target);
+                console.log(formData);
+                const { data } = await axios.post(
+                    "http://localhost:4000/signin",
+                    formData,
+                    {
+                        withCredentials: true,
+                    }
+                );
+                alert(data);
+                location.href = "/";
+            });
+        </script>
+    </body>
+</html>

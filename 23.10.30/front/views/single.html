@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Single</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <form method="post" action="" enctype="multipart/form-data">
+            <input type="text" name="title" />
+            <input type="file" name="upload1" />
+            <button>Upload the file</button>
+        </form>
+
+        <script>
+            const frm = document.querySelector("form");
+            frm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                console.log(e.target.title);
+                console.log(e.target.upload1);
+                console.log("Submit blocked");
+
+                // axios
+                // FormData
+                const formData = new FormData(e.target);
+                // console.dir(formData);
+                const {
+                    data: {
+                        fileInfo,
+                        textInfo: { title },
+                    },
+                } = await axios.post("http://localhost:4000/upload", formData, {
+                    withCredentials: true,
+                });
+                console.log(fileInfo, title);
+                const img = document.createElement("img");
+                const h1 = document.createElement("h1");
+                img.src = `http://localhost:4000/${fileInfo.filename}`;
+                h1.innerHTML = title;
+                document.body.appendChild(h1);
+                document.body.appendChild(img);
+            });
+        </script>
+    </body>
+</html>
