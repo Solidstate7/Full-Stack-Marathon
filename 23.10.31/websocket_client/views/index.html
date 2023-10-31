@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Chatroom</title>
+        <style>
+            .right {
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+        Chatroom
+        <ul id="chat"></ul>
+        <div>
+            <form id="frm">
+                <input type="text" name="message" />
+                <button>Send</button>
+            </form>
+        </div>
+        <script>
+            const socket = new WebSocket("ws://127.0.0.1:3000");
+
+            const frm = document.querySelector("#frm");
+            const chat = document.querySelector("#chat");
+
+            socket.addEventListener("message", (e) => {
+                console.log(`server로부터 받은 메시지 ${e.data}`);
+
+                const li = document.createElement("li");
+                li.innerHTML = e.data.toString();
+                chat.append(li);
+            });
+
+            frm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const {
+                    message: { value: message },
+                } = e.target;
+
+                const li = document.createElement("li");
+                li.classList.add("right");
+                li.innerHTML = message;
+                socket.send(message);
+
+                chat.append(li);
+
+                e.target.reset();
+
+                e.target.message.focus();
+            });
+        </script>
+    </body>
+</html>
