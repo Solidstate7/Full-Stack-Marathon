@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+  </head>
+  <body>
+    <div id="root">
+      <!-- SPA, 페이지 전환 효과 -->
+    </div>
+  </body>
+  <script>
+    // Root DOM를 제외하고 querySelector등 사용하지 않는다
+
+    const root = document.querySelector("#root");
+
+    // button element created
+    const button = document.createElement("button");
+    button.addEventListener("click", (e) => {
+      if (e.target.innerHTML === "login") {
+        e.target.innerHTML = "logout";
+      } else {
+        e.target.innerHTML = "login";
+      }
+    });
+
+    button.innerHTML = "<div>Click</div>";
+    root.append(button);
+  </script>
+</html>

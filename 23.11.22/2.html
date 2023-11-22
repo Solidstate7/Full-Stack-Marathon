@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Component</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script>
+    // react UI 단위 기본, 컴포넌트, 재사용 가능 부품
+    // Props and States, 단방향 데이터 흐름
+    // Props는 부모 컴포넌트에서 전달받은 변수, States는 컴포넌트의 상태 변수
+    // Class vs Functional Components
+    // Component's Lifecycle
+
+    class Component {
+      target;
+      state = {};
+
+      constructor(target) {
+        this.target = target;
+        this.setup();
+        this.render();
+      }
+
+      setup() {
+        // 컴포넌트 초기 설정, 렌더링 하기 전에 동작하는 함수
+        console.log("컴포넌트 초기 세팅");
+      }
+
+      template() {
+        // Component HTML 템플릿 반환
+        return `<div> HTML Component </div>`;
+      }
+
+      render() {
+        // 컴포넌트 타겟 요소에 렌더링
+        this.target.innerHTML = this.template();
+        this.setEvent();
+      }
+
+      setEvent() {
+        // Component의 Event Setup
+        console.log("Component Event");
+      }
+
+      // 상태 업데이트 할 때: 리액트는 상태값을 주시하고 있다.
+
+      setState(_state) {
+        this.state = { ...this.state, ..._state };
+        // 상태가 업데이트되면 반응해서 렌더한다.
+        // 1. 부모 컴포넌트가 리렌더되면 자식 컴포넌트는 모두 리렌더된다.
+        // 2. 해당 컴포넌트의 상태가 업뎃되면 리렌더링된다.
+        // 상태가 변해야 다시 컴포넌트를 그리고 다시 그려줘야 업뎃된 데이터가 보인다.
+
+        this.render();
+        console.log("상태 업데이트.");
+      }
+    }
+
+    class VirtualDOM {
+      // 위에 작성한 컴포넌트 클래스를 상속하고 있는 클래스 전달
+      constructor(component, target) {
+        // 매개변수로 전달받은 컴포넌트 클래스를 생성하면서 요소로 타겟을 전달
+        this.Component = new component(target);
+      }
+
+      render() {
+        // Component Rendering
+
+        this.Component.render();
+      }
+    }
+
+    class App extends Component {
+      setup() {
+        // 초기 상태 세팅
+        this.state = { item: ["id 01", "pw 123"] };
+      }
+
+      template() {
+        // app의 HTML 생성해서 리턴
+        const { item } = this.state;
+        return `
+            <ul>
+                ${item.map((i) => `<li>${i}</li>`)}
+            </ul>
+            <button>Add</button>
+        `;
+      }
+
+      setEvent() {
+        // App Component Event 등록
+        // 리액트는 Key로 컴포넌트를 식별한다.
+        this.target.querySelector("button").addEventListener("click", (e) => {
+          const { item } = this.state;
+          // 상태 전환
+          // 버튼 누르면 상태 바뀌고 리렌더링
+          // set 함수 사용 이유
+          this.setState({
+            item: [...item, `추가된 아이템 ${item.length + 1}`],
+          });
+          console.log(item);
+        });
+      }
+    }
+
+    const root = new VirtualDOM(App, document.querySelector("#root"));
+    root.render();
+
+    class Login extends Component {}
+  </script>
+</html>
