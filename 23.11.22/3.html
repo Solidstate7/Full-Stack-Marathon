@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    class LoginBtn extends React.Component {
+      // 컴포넌트 생성 단계
+      // 부모 컴포넌트에서 props 받음
+      constructor(props) {
+        super(props);
+        // Component
+        this.state = {
+          isLogin: false,
+        };
+      }
+
+      render() {
+        return (
+          // html code goes here as Babel transpiles JSX into JS
+          // html attributes become camelCase
+          // functions in JSX: somefunc() mean invocation.
+          // conditional rendering
+
+          <button
+            onClick={() => {
+              this.setState({
+                isLogin: !this.state.isLogin,
+              });
+            }}
+          >
+            {this.state.isLogin ? "Logout" : "Login"}
+          </button>
+        );
+      }
+    }
+
+    // 루트 요소에 컴포넌트를 보여주자
+    // 가상 DOM이 루트를 타겟으로 잡아서 렌더
+
+    const root = ReactDOM.createRoot(document.querySelector("#root"));
+    root.render(<LoginBtn id="2"></LoginBtn>);
+
+    // JSX 구문
+    // 일반적인 태그가 아닌 컴포넌트
+    // 컴포넌트에 작성한 속성은 프롭스 값으로 전달된다
+    // 일반적으로 우리가 HTML에서 태그 작성했던 속성값을 주는 방식처럼 사용할 수 없다.
+  </script>
+</html>
