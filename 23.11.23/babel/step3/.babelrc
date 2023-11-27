@@ -1,0 +1,5 @@
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+  // 일반적으로 리액트 프로젝트에는 두가지 속성을 기본구성 한다.
+  // @babel/preset-react : JSX -> JS transpilation, so that the browser can utilise the code
+}

@@ -1,0 +1,1 @@
+(()=>{var e={565:e=>{e.exports={name:"I'm a homepage"}}},r={};function o(t){var n=r[t];if(void 0!==n)return n.exports;var a=r[t]={exports:{}};return e[t](a,a.exports,o),a.exports}(()=>{const e=o(565);console.log(e.name),ReactDOM.createRoot(document.querySelector("#root")).render(React.createElement("div",null,e.name))})()})();
