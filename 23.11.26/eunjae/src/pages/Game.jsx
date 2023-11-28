@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { Boom } from "../components/boom.jsx";
 
-export const Game = () => {
+const Game = () => {
   const [booms, setBooms] = useState([]);
   // lifecycle method - useEffect
   // booms: empty array -> state changes -> re-renders with 8-len array
@@ -25,3 +25,5 @@ export const Game = () => {
 
   return <div>{booms}</div>;
 };
+
+export default Game;

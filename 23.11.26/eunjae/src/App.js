@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import { Game } from "./pages/Game.jsx";
+import Game from "./pages/Game.jsx";
 import Main from "./pages/Main.jsx";
 import Login from "./pages/Login.jsx";
 import Game2 from "./pages/Game2.jsx";
