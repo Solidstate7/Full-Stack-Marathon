@@ -27,6 +27,12 @@ const Mine = () => {
     Default,
   ]);
 
+  const temptest = () => {
+    let arr = [...temp];
+
+    const random = Math.floor(Math.random() * arr.length);
+    arr.splice(random, 1);
+  };
   const entityHandler = () => {};
 
   return (
