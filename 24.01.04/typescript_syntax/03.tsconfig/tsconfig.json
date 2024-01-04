@@ -1,0 +1,25 @@
+{
+  // 컴파일 진행 폴더 지정
+  "include": ["src/**/*", "server.ts"],
+  // "./*" 현재 경로의 모든 파일
+  // "./**/*" 현재 경로의 하위 폴더의 모든 파일
+
+  // 컴파일 대상 제외
+  "exclude": [],
+  // 컴파일 옵션 속성
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["dom", "es2015"],
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@user/*": ["user/*"]
+    }
+  }
+}
